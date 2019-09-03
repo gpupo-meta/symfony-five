@@ -51,7 +51,8 @@ __bottom:
 ## Setup environment & Install & Build application
 setup:
 	printf "${COLOR_COMMENT}Rebuild .env files${COLOR_RESET}\n"
-	ln -sn Resources/docker-compose.dev.yaml docker-compose.yaml
+	touch .env.local;
+	ln -snf Resources/docker-compose.dev.yaml docker-compose.yaml
 	$(MAKE) __bottom;
 
 ## Project warmup
